@@ -1,0 +1,80 @@
+package com.company;
+
+//Main Class
+public class Main {
+
+    public static void main(String[] args) {
+
+        Wrapper first = new Wrapper();
+        Wrapper last = new Wrapper();
+
+
+        Pizza.enqueue(first, last, new Pizza("pepperoni", "1234 Bobcat Trail"));
+        Pizza.enqueue(first, last, new Pizza("sausage", "2345 University Drive"));
+        Pizza.deliver(first, last);
+        Pizza.enqueue(first, last, new Pizza("extra cheese", "3456 Rickster Road"));
+        Pizza.enqueue(first, last, new Pizza("everything", "4567 King Court"));
+        Pizza.enqueue(first, last, new Pizza("coffee beans", "5678 Java Circle"));
+        Pizza.deliver(first, last);
+        Pizza.deliver(first, last);
+        Pizza.deliver(first, last);
+        Pizza.deliver(first, last);
+        Pizza.deliver(first, last);
+
+    }
+}
+
+
+//Pizza Class
+public class Pizza {
+
+    String ingredients;
+    String address;
+    Pizza next;
+    Pizza(String ingredients, String address){
+
+        this.address = address;
+        this.ingredients = ingredients;
+        next = null;
+
+    }
+
+    static void enqueue(Wrapper head, Wrapper tail, Pizza thisPizza){
+
+    if(head.value == null){
+        head.value = thisPizza;
+    }
+    else {
+        tail.value.next = thisPizza;
+    }
+    tail.value = thisPizza;
+
+    }
+
+    static Pizza dequeue(Wrapper head, Wrapper tail){
+        Pizza pizzaToDeliver = null;
+        if(head.value != null){
+            pizzaToDeliver = head.value;
+            head.value = head.value.next;
+        }
+        if(head.value == null)
+            tail.value = null;
+
+        return pizzaToDeliver;
+    }
+
+    static void deliver(Wrapper head, Wrapper tail){
+        Pizza thisPizza = dequeue(head, tail);
+        if(thisPizza == null){
+            System.out.println("No deliveries pending");
+        }
+        System.out.println("Deliver a pizza with " + thisPizza.ingredients + " to " + thisPizza.address);
+
+    }
+
+}
+
+//Wrapper Class
+public class Wrapper {
+    Pizza value;
+}
