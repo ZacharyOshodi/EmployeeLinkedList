@@ -1,0 +1,44 @@
+
+%Read in data from spreadsheet
+
+pricesAll = xlsread('PrcStock.xlsx');
+prices = pricesAll(:,2:end);
+
+%calculate returns
+
+%Note: 1 dimension is rows, second dimension is columns
+%Note: Subtracting by 1 because returns should be one row less than stk
+%prices
+
+rets = zeros(size(prices, 1)-1,size(prices,2));
+offsetP = zeros(size(prices, 1),size(prices,2));
+offsetP(1:end-1,:)=prices(2:end,:);
+
+temprets = prices ./ offsetP-1;
+rets(1:end,:) = temprets(1:end-1,:);
+
+%Summary Statistics Calculations
+avgRets = mean(rets,1);
+stdRets = std(rets,1);
+skwRets = skewness(rets);
+kurtRets = kurtosis(rets);
+
+%HPR & Geometric Avg Calculations
+hpRets = prices(1,:) ./ prices(end,:);
+geoOnes = ones(1,size(prices,2));
+geoRets = (hpRets + geoOnes) .^(1/size(rets,1));
+
+%Correlation and Covariance Calculations
+correl = corrcoef(rets);
+coVar = cov(rets);
+
+%Organizing The Data
+summStat = [avgRets;stdRets;skwRets;kurtRets]
+
+xlswrite('summstat',summStat)
+xlswrite('corr', correl)
+xlswrite('cov', coVar)
+
+save datafile.mat
+
+
