@@ -18,9 +18,9 @@ There is an excel sheet as well that shows summary statistics as well as data vi
 
 ---------------------------------------------------------------------------------------------------------
 
----------------------------------- Pizza Queue ----------------------------------------------------------
+---------------------------------- PizzaDeliverySystem----------------------------------------------------
 
 This is a project we did in class where we utilized the common data structure of queues to imitate -
-a pizza delivery system
+a pizza delivery system using java.
 
 ----------------------------------------------------------------------------------------------------------
