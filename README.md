@@ -17,3 +17,10 @@ In my MATLAB - Stock Analysis mini-project I analyzed 5 stocks against the S&P 5
 There is an excel sheet as well that shows summary statistics as well as data visuals of the stocks comparative to one another.
 
 ---------------------------------------------------------------------------------------------------------
+
+---------------------------------- Pizza Queue ----------------------------------------------------------
+
+This is a project we did in class where we utilized the common data structure of queues to imitate -
+a pizza delivery system
+
+----------------------------------------------------------------------------------------------------------
