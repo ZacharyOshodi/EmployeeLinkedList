@@ -11,6 +11,7 @@ I aspire to continuously add and grow my showcase repository as I grow my skills
 In this README.md I will separate and categorize my work with explanations for each file
 
 ------------------------------- MATLAB - Stock Analysis ------------------------------------------------
+
 In my MATLAB - Stock Analysis mini-project I analyzed 5 stocks against the S&P 500 and measured stats such as beta, standard deviation, covariance, etc.
 
 There is an excel sheet as well that shows summary statistics as well as data visuals of the stocks comparative to one another.
