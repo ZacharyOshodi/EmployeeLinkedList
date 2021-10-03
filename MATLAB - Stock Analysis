@@ -41,4 +41,28 @@ xlswrite('cov', coVar)
 
 save datafile.mat
 
+load datafile.mat
 
+covW1 = coVar(2:end,1);
+varSP = coVar(1,1);
+
+oneVec = ones(size(prices,2)-1,1);
+varSPvec = oneVec * varSP;
+beta = covW1 ./ varSPvec
+
+%calculate expected return of an equally weighted portfolio
+
+weightVec = oneVec*(1/(size(prices,2)-1));
+
+aveRetst = avgRets(:,2:end)';
+
+portRets = weightVec'*aveRetst
+
+%calculate beta of an equally weighted portfolio
+
+portBeta = weightVec'*beta
+
+%calculate standard deviation of an equally weighted portfolio
+covNoI = coVar(2:end,2:end)
+portVar = weightVec'*covNoI*weightVec
+portSD = sqrt(portVar)
