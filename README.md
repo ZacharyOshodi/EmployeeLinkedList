@@ -24,3 +24,11 @@ This is a project we did in class where we utilized the common data structure of
 a pizza delivery system using java.
 
 ----------------------------------------------------------------------------------------------------------
+
+----------------------------------EmployeeManagementSystem - DoublyLinkedList-----------------------------
+
+In this code I created a manual doubly linked list class in Java, (while the JDK does already provide a LinkedList
+I decided to create my own). I essentially created a simple employee class with some attributes and methods and
+then implemented them in a doubly linked list to keep them connected to one another.
+
+-----------------------------------------------------------------------------------------------------------
