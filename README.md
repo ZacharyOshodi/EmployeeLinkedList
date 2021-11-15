@@ -2,7 +2,7 @@
 For this mini-showcase I've outlined some code that I have worked on whether it be coursework or personal curiousity - 
 I mainly seek to showcase some of my work.
 
-While I do attend Texas State University I consider myself mainly self-taught so a lot of my work was done through my to suffice my own curiosity and pleasure.
+While I do attend Texas State University I consider myself mainly self-taught so a lot of my work was done to suffice my own curiosity and pleasure.
 
 In this repository I have mini-projects that I have worked on in C++/Java/MATLAB,etc.
 
